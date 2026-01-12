@@ -3,7 +3,7 @@
 // For security reasons, please avoid using the default public token provided by Mapbox as much as possible.
 // Instead, manually add a new token and apply URL restrictions.
 // (please refer to https://github.com/yihong0618/running_page/issues/643#issuecomment-2042668580)
-export const MAPBOX_TOKEN =
+const MAPBOX_TOKEN =
   import.meta.env.VITE_MAPBOX_TOKEN ||
   '请在 Vercel Environment Variables 中设置 VITE_MAPBOX_TOKEN';
 
