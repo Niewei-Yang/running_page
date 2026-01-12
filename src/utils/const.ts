@@ -1,9 +1,7 @@
 // Constants
-const MAPBOX_TOKEN =
-  // For security reasons, please avoid using the default public token provided by Mapbox as much as possible.
-  // Instead, manually add a new token and apply URL restrictions.
-  // (please refer to https://github.com/yihong0618/running_page/issues/643#issuecomment-2042668580)
-  'pk.eyJ1IjoieWlob25nMDYxOCIsImEiOiJjbWYxdXR4YncwMTJtMm5zOTE4eTZpMGdtIn0.OnsXdwkZFztR8a5Ph_T-xg';
+export const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN || 
+  // fallback: 如果 env 没设，用一个提示（或留空，但别用作者的）
+  '请在 Vercel Environment Variables 中设置 VITE_MAPBOX_TOKEN';
 const MUNICIPALITY_CITIES_ARR = [
   '北京市',
   '上海市',
