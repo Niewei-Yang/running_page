@@ -19,6 +19,8 @@ import {
   MAP_TILE_STYLE_DARK,
   IS_CHINESE,
   getCyclingColor,
+  CYCLING_COLOR_LIGHT,
+  CYCLING_COLOR_DARK,
 } from './const';
 import {
   FeatureCollection,
