@@ -179,17 +179,17 @@ const dark_vanilla = 'rgb(228,212,220)';
 // If your map has an offset please change this line
 // issues #92 and #198
 export const NEED_FIX_MAP = false;
-export const MAIN_COLOR = '#f97316';
+export const MAIN_COLOR = nike;
 export const PROVINCE_FILL_COLOR = '#47b8e0';
 export const COUNTRY_FILL_COLOR = dark_vanilla;
 
 // Static color constants
 export const RUN_COLOR_LIGHT = '#47b8e0';
-export const RUN_COLOR_DARK = MAIN_COLOR;
+export const RUN_COLOR_DARK = '#52c41a';
 
 // 骑行颜色 - 亮色模式用橙色，暗色模式保持原鲜绿
-export const CYCLING_COLOR_LIGHT = '#f97316'; // 橙色（Tailwind orange-600，推荐值）
-export const CYCLING_COLOR_DARK = 'rgb(51,255,87)';
+export const CYCLING_COLOR_LIGHT = '#ff4d4f'; // 橙色（Tailwind orange-600，推荐值）
+export const CYCLING_COLOR_DARK = '#f97316';;
 
 // Single run animation colors
 export const SINGLE_RUN_COLOR_LIGHT = '#52c41a'; // Green for light theme
