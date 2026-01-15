@@ -187,6 +187,10 @@ export const COUNTRY_FILL_COLOR = dark_vanilla;
 export const RUN_COLOR_LIGHT = '#47b8e0';
 export const RUN_COLOR_DARK = MAIN_COLOR;
 
+// 骑行颜色 - 亮色模式用橙色，暗色模式保持原鲜绿
+export const CYCLING_COLOR_LIGHT = '#f97316';       // 橙色（Tailwind orange-600，推荐值）
+export const CYCLING_COLOR_DARK  = MAIN_COLOR; // 原颜色（鲜绿）
+
 // Single run animation colors
 export const SINGLE_RUN_COLOR_LIGHT = '#52c41a'; // Green for light theme
 export const SINGLE_RUN_COLOR_DARK = '#ff4d4f'; // Red for dark theme
@@ -223,6 +227,22 @@ export const getRuntimeSingleRunColor = (): string => {
   return isDark ? SINGLE_RUN_COLOR_DARK : SINGLE_RUN_COLOR_LIGHT;
 };
 
+export const getCyclingColor = (): string => {
+  if (typeof window === 'undefined') return CYCLING_COLOR_DARK;
+
+  const dataTheme = document.documentElement.getAttribute('data-theme');
+  const savedTheme = localStorage.getItem('theme');
+
+  // 判断是否暗色（优先 DOM attribute，其次 localStorage，默认暗色）
+  const isDark =
+    dataTheme === 'dark' ||
+    (!dataTheme && savedTheme === 'dark') ||
+    (!dataTheme && !savedTheme);
+
+  return isDark ? CYCLING_COLOR_DARK : CYCLING_COLOR_LIGHT;
+};
+
+
 // Legacy export for backwards compatibility
 export const RUN_COLOR = '#47b8e0';
 export const RUN_TRAIL_COLOR = 'rgb(255,153,51)';
@@ -230,6 +250,8 @@ export const CYCLING_COLOR = 'rgb(51,255,87)';
 export const HIKING_COLOR = 'rgb(151,51,255)';
 export const WALKING_COLOR = HIKING_COLOR;
 export const SWIMMING_COLOR = 'rgb(255,51,51)';
+
+
 
 // map tiles vendor, maptiler or mapbox or stadiamaps
 // if you want to use maptiler, set the access token in MAP_TILE_ACCESS_TOKEN
