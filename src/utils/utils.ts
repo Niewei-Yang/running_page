@@ -247,22 +247,27 @@ const colorForRun = (run: Activity): string => {
     }
 
     case 'cycling': {
-      // 目前所有骑行都用动态颜色
-      // 如果以后有特殊 subtype，可以在这里加 if 判断
+      return dynamicCyclingColor;
+    }
+    case 'Ride': {
       return dynamicCyclingColor;
     }
 
     case 'hiking':
       return dynamicRunColor;
+    case 'Hike':
+      return dynamicRunColor;
 
     case 'walking':
+      return dynamicRunColor;
+    case 'Walk':
       return dynamicRunColor;
 
     case 'swimming':
       return SWIMMING_COLOR;
 
     default:
-      return SWIMMING_COLOR;
+      return MAIN_COLOR;
   }
 };
 
