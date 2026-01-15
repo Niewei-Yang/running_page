@@ -349,12 +349,12 @@ const titleForRun = (run: Activity): string => {
     const { city } = locationForRun(run);
     const activity_sport = getActivitySport(run);
     if (city && city.length > 0 && activity_sport.length > 0) {
-      return `${city} ${activity_sport}`;  
+      return `${city} ${activity_sport}`;
     }
   }
 
   // 3. 最终 fallback：时间段 + 类型（动态选择类型）
-  const timePrefix = getTimeOfDay(run.start_date_local);  
+  const timePrefix = getTimeOfDay(run.start_date_local);
   const activity_sport = getActivitySport(run);
 
   // 如果有类型，用类型；否则 fallback 到跑步
@@ -369,7 +369,7 @@ const titleForRun = (run: Activity): string => {
     return `${timePrefix}${RUN_TITLES.HALF_MARATHON_RUN_TITLE}`;
   }
 
-  return `${timePrefix}${typeTitle}`;  
+  return `${timePrefix}${typeTitle}`;
 };
 
 export interface IViewState {
